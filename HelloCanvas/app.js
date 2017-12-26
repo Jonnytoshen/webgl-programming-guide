@@ -1,0 +1,17 @@
+window.onload = () => {
+    main();
+}
+
+const main = () => {
+    const canvas = document.getElementById('app');
+    // 获取WebGL绘图上下文
+    let gl = getWebGLContext(canvas);
+    if(!gl) {
+        console.log('Failed to get the rendering context for WebGL.');
+        return;
+    }
+    // 指定清空<canvas>的颜色
+    gl.clearColor(0.5, 0.2, 0.8, 1.0);
+    // 清空<canvas>
+    gl.clear(gl.COLOR_BUFFER_BIT);
+}
